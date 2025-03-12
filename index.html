@@ -5,41 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style/style.css">
     <script src="Scripts/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1 id="title">CALCULADORA</h1>
     <div class="container">
-        <div class="theme_switch"></div>
+        <div class="theme_switch">
+            <input type="checkbox" id="test">
+            <label for="toggle" id="slider"></label>
+        </div>
         <div class="container_1">
             <div class="text">
                 <div class="prev_text">
-                    <textarea name="prev_text_area" id="text_1" readonly></textarea>
+                    <input type="text" id="text_1" ></input type="text">
                 </div>
                 <div class="current_text">
-                    <textarea name="current_text_area" id="text_0" readonly></textarea>
+                    <input type="text" id="text_0" ></input type="text">
                 </div>
             </div>
             <div class="buttons">
-                <button value="clear" id="grey_button" onclick="execButton(this)">C</button>
-                <button value="invert" id="grey_button" onclick="execButton(this)">+/-</button>
-                <button value="percent" id="grey_button" onclick="execButton(this)">%</button>
-                <button value="/" id="blue_button" onclick="execButton(this)">÷</button>
-                <button value="7" id="black_button" onclick="execButton(this)">7</button>
-                <button value="8" id="black_button" onclick="execButton(this)">8</button>
-                <button value="9" id="black_button" onclick="execButton(this)">9</button>
-                <button value="*" id="blue_button" onclick="execButton(this)">x</button>
-                <button value]="4" id="black_button" onclick="execButton(this)">4</button>
-                <button value="5" id="black_button" onclick="execButton(this)">5</button>
-                <button value="6" id="black_button" onclick="execButton(this)">6</button>
-                <button value="-" id="blue_button" onclick="execButton(this)">-</button>
-                <button value="1" id="black_button" onclick="execButton(this)">1</button>
-                <button value="2" id="black_button" onclick="execButton(this)">2</button>
-                <button value="3" id="black_button" onclick="execButton(this)">3</button>
-                <button value="+" id="blue_button" onclick="execButton(this)">+</button>
-                <button value="." id="black_button" onclick="execButton(this)">.</button>
-                <button value="0" id="black_button" onclick="execButton(this)">0</button>
-                <button value="remove_character" id="black_button" onclick="execButton(this)">⌫</button>
-                <button value="equals" id="blue_button" onclick="execButton(this)">=</button>
+                <button value="clear" class="left" id="grey_button" onclick="execButton(this)">
+                    C
+                </button>
+                <button value="invert" id="grey_button" onclick="execButton(this)">
+                    +/-
+                </button>
+                <button value="percent" id="grey_button" onclick="execButton(this)">
+                    %
+                </button>
+                <button value="/"  id="blue_button" onclick="execButton(this)">
+                    ÷
+                </button>
+                <button value="7" class="left" id="black_button" onclick="execButton(this)">
+                    7
+                </button>
+                <button value="8" id="black_button" onclick="execButton(this)">
+                    8
+                </button>
+                <button value="9" id="black_button" onclick="execButton(this)">
+                    9
+                </button>
+                <button value="*" id="blue_button" onclick="execButton(this)">
+                    x
+                </button>
+                <button value]="4" class="left" id="black_button" onclick="execButton(this)">
+                    4
+                </button>
+                <button value="5" id="black_button" onclick="execButton(this)">
+                    5
+                </button>
+                <button value="6" id="black_button" onclick="execButton(this)">
+                    6
+                </button>
+                <button value="-"  id="blue_button" onclick="execButton(this)">
+                    -
+                </button>
+                <button value="1" class="left" id="black_button" onclick="execButton(this)">
+                    1
+                </button>
+                <button value="2" id="black_button" onclick="execButton(this)">
+                    2
+                </button>
+                <button value="3" id="black_button" onclick="execButton(this)">
+                    3
+                </button>
+                <button value="+"  id="blue_button" onclick="execButton(this)">
+                    +
+                </button>
+                <button value="." class="left" id="black_button" onclick="execButton(this)">
+                    .
+                </button>
+                <button value="0" id="black_button" onclick="execButton(this)">
+                    0
+                </button>
+                <button value="remove_character" id="black_button" onclick="execButton(this)">
+                    ⌫
+                </button>
+                <button value="equals"  id="blue_button" onclick="execButton(this)">
+                    =
+                </button>
             </div>
         </div>
     </div>

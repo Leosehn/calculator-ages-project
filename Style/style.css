@@ -1,19 +1,151 @@
+:root {
+    --background: #F1F2F3;
+    --grey-button: #D2D3DA;
+    --blue-butto: #4B5EFC;
+    --theme-button: #FFFFFF;
+    --text-color: #000000;
+    --blue-button-color: #fff;
+    --button-slider: #D2D3DA;
+    --background-slider: #D2D3DA;
+}
+
 .container {
-    position:relative;
+    position: relative;
     width: 375px;
     height: 812px;
+    background-color: #F1F2F3;
+    /*border:solid 2px #000;*/
 }
 
 .container_1 {
+    position: absolute;
     width: 335px;
     height: 599px;
     padding: 0;
+    background-color: none;
+    margin-left: 20px;
+    margin-right: 20px;    /*margin*/
+    top: 147px;
 }
+
+.theme_switch {
+    position: relative;
+    display: flex;
+    width: 72px;
+    height: 32px;
+    top: 60px;
+    left: 151px;
+    background-color: #fff;
+    border-radius: 16px;
+}
+
+#test {
+    display: none;
+}
+
+#slider {
+    position: relative;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #D2D3DA;
+    border-radius: 16px;
+}
+
+#slider::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 44px;
+    width: 24px;
+    height: 24px;
+    background-color: #D2D3DA;
+    border-radius: 100%;
+}
+
+
 
 button {
     width: 71.75px;
     height: 72px;
     border-radius: 24px;
-    margin: 8px;
+    margin-right: 8px;
+    margin-top: 16px;
+    border: none;
+    font-family: 'Work Serif', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.buttons {
+    background-color: none;
+    margin: 0;
+}
+
+
+#grey_button {
+    background-color: #D2D3DA;
+    margin-top: 0;
+    color: #000000;
+}
+
+#blue_button {
+    background-color: #4B5EFC;
+    color: #FFF;
+}
+
+
+
+#black_button {
+    background-color: #FFFFFF;
+    color: #000;
+}
+
+.left {
+    margin-left: 3px;
+}
+
+.right {
+    margin-right: 0; left: 0;
+    right: 0;
+}
+
+.text {
+    right: 0;
+    height: 143px;
+    width: 335px;
+}
+
+#text_1 {
+    height: 47px;
+    width: 335px;
+    border: none;
+    background-color: #F1F2F3;
     position: relative;
+    color: #000;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 40px;
+    text-align: end;
+    vertical-align: middle;
+    opacity: 40%;
+}
+
+#text_0 {
+    height: 96px;
+    border: none;
+    width: 335px;
+    position: relative;
+    color: #000;
+    background-color: #F1F2F3;
+    text-align: end;
+    vertical-align: middle;
+    font-size: 96px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
