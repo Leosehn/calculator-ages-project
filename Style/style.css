@@ -6,14 +6,14 @@
     --text-color: #000000;
     --blue-button-color: #fff;
     --button-slider: #D2D3DA;
-    --background-slider: #D2D3DA;
+    --background-slider: #fff;
 }
 
 .container {
     position: relative;
     width: 375px;
     height: 812px;
-    background-color: #F1F2F3;
+    background-color: var(--background);
     /*border:solid 2px #000;*/
 }
 
@@ -24,7 +24,7 @@
     padding: 0;
     background-color: none;
     margin-left: 20px;
-    margin-right: 20px;    /*margin*/
+    margin-right: 20px;
     top: 147px;
 }
 
@@ -35,7 +35,7 @@
     height: 32px;
     top: 60px;
     left: 151px;
-    background-color: #fff;
+    background-color: var(--background-slider);
     border-radius: 16px;
 }
 
@@ -50,7 +50,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #D2D3DA;
+    background-color: var(--background-slider);
     border-radius: 16px;
 }
 
@@ -61,7 +61,7 @@
     left: 44px;
     width: 24px;
     height: 24px;
-    background-color: #D2D3DA;
+    background-color: var(--button-slider);
     border-radius: 100%;
 }
 
@@ -87,14 +87,14 @@ button {
 
 
 #grey_button {
-    background-color: #D2D3DA;
+    background-color: var(--grey-button);
     margin-top: 0;
-    color: #000000;
+    color: var(--text-color);
 }
 
 #blue_button {
-    background-color: #4B5EFC;
-    color: #FFF;
+    background-color: var(--blue-butto);
+    color: var(--blue-button-color);
 }
 
 
