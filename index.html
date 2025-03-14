@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style/style.css">
-    <script src="Scripts/index.js"></script>
+    <script type="text/javascript" src="Scripts/index.js"></script>
+    <script type="text/javascript" src="Scripts/theme.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="">
     <h1 id="title">CALCULADORA</h1>
     <div class="container">
         <div class="theme_switch">
-            <input type="checkbox" id="test">
+            <button id="toggle"></button>
             <label for="toggle" id="slider"></label>
+            <img id="moon" src="Images/moon.png" alt="moon_image">
+            <img id="sun" src="Images/sun.png" alt="sun_image">
         </div>
         <input type="text" id="text_store">
         <div class="container_1">
             <div class="text">
                 <div class="prev_text">
-                    <input type="text" id="text_1" ></input type="text">
+                    <input type="text" id="text_1" readonly></input type="text">
                 </div>
                 <div class="current_text">
-                    <input type="text" id="text_0" ></input type="text">
+                    <input type="text" id="text_0" maxlength="8" readonly></input type="text">
                 </div>
             </div>
             <div class="buttons">
@@ -51,7 +54,7 @@
                 <button value="*" id="blue_button" onclick="execButton(value)">
                     x
                 </button>
-                <button value]="4" class="left" id="black_button" onclick="execButton(value)">
+                <button value="4" class="left" id="black_button" onclick="execButton(value)">
                     4
                 </button>
                 <button value="5" id="black_button" onclick="execButton(value)">

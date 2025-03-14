@@ -1,4 +1,6 @@
 function execButton(objValue) {
+
+    console.log(objValue)
     size = document.getElementById("text_store").value.length
     if(objValue == "clear") {
         document.getElementById("text_0").value = "";
@@ -176,7 +178,7 @@ function removeLastCharacter(value) {
     newString = ""
     for (let i = 0; i < value.length; i++) {
 
-        if (i != value.length - 1) {
+        if (i !== value.length - 1) {
             newString += value.charAt(i);
         }
         else {
