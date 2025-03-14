@@ -14,35 +14,58 @@ function execButton(objValue) {
         return
     }
     else if(objValue == "*") {
-        document.getElementById("text_0").value += "x";
-        document.getElementById("text_store").value += "*"
+        if(!document.getElementById("text_store").value.includes("*")) {
+            document.getElementById("text_0").value += "x";
+            document.getElementById("text_store").value += "*"
+        }
         return
     }
     else if(objValue == "/") {
+        if(!document.getElementById("text_store").value.includes("/")) {
         document.getElementById("text_0").value += "÷"
         document.getElementById("text_store").value += "/"
+        }
         return
     }
     else if(objValue == "invert") {
         value = document.getElementById("text_store").value
-        
+        if (value.length == 1 && value.charAt(0) == "-") {
+            //console.log("etrei")
+            document.getElementById("text_0").value = ""
+            document.getElementById("text_store").value = ""
+            return
+        }
+        else if(value.charAt(0) == "-") {
+            //console.log("entrei")
+            document.getElementById("text_0").value = document.getElementById("text_0").value.substring(1)
+            document.getElementById("text_store").value = value.substring(1)
+            return
+        }
+        else if(value.indexOf("-")>0) {
+            index = value.indexOf("-")
+            document.getElementById("text_0").value = document.getElementById("text_0").value.substring(0,index) + "+" + document.getElementById("text_0").value.substring(index+1)
+            document.getElementById("text_store").value = document.getElementById("text_store").value.substring(0,index) + "+" + document.getElementById("text_store").value.substring(index+1)
+            return
+        }
+        else if(value.indexOf("+")>0) {
+            index = value.indexOf("+")
+            document.getElementById("text_0").value = document.getElementById("text_0").value.substring(0,index) + "-" + document.getElementById("text_0").value.substring(index+1)
+            document.getElementById("text_store").value = document.getElementById("text_store").value.substring(0,index) + "-" + document.getElementById("text_store").value.substring(index+1)
+            return
+        }
         try {
-            if(value.indexOf(value.match(/["*""+""-""/"][^"."]/gi)[0]) && value.charAt(value.indexOf(value.match(/["*""+""-""/"][^"."]/gi)[0])+1) != "-") {
+            if(value.indexOf(value.match(/["*""+""/"][^"."]/gi)[0])) {
                 
                 //console.log(value.charAt(value.indexOf(value.match(/["*""+""-""/"][^"."]/gi)[0])+1))
-                index = value.indexOf(value.match(/["*""+""-""/"][^"."]/gi)[0])
+                index = value.indexOf(value.match(/["*""+""/"][^"."]/gi)[0])
                 //console.log(document.getElementById("text_0").value.substring(0,index))
                 //console.log(document.getElementById("text_0").value.substring(0,index+1))
                 document.getElementById("text_0").value = document.getElementById("text_0").value.substring(0,index+1) + "-" + document.getElementById("text_0").value.substring(index+1)
                 document.getElementById("text_store").value = document.getElementById("text_store").value.substring(0,index+1) + "-" + document.getElementById("text_store").value.substring(index+1)
             }
-            else if(value.charAt(0) == "-") {
-                //console.log("entrei")
-                document.getElementById("text_0").value = document.getElementById("text_0").value.substring(1)
-                document.getElementById("text_store").value = value.substring(1)
-            }
+            
             else {
-                index = value.indexOf(value.match(/["*""+""-""/"][^"."]/gi)[0])
+                index = value.indexOf(value.match(/["*""/"][^"."]/gi)[0])
 
                 document.getElementById("text_0").value = document.getElementById("text_0").value.substring(0,index+1) + document.getElementById("text_0").value.substring(index+2)
                 document.getElementById("text_store").value = document.getElementById("text_store").value.substring(0,index+1) + document.getElementById("text_store").value.substring(index+2)
@@ -81,6 +104,11 @@ function execButton(objValue) {
                 document.getElementById("text_store").value += "0."
                 return
             }
+            else if (!value.substring(value.indexOf("-")).includes(".")) {
+                document.getElementById("text_0").value += "."
+                document.getElementById("text_store").value += "."
+                return
+            }
             else if(value.charAt(size-1) == value.match(/["*""+""/"][^"."]/gi)[0]) {
                 //console.log(value.match(/["*""+""-""/"][^"."]/gi)[0])
                 //console.log(value.charAt(size-1))
@@ -89,8 +117,8 @@ function execButton(objValue) {
                 return
             }
             else {
-                console.log("entrei")
-                if(!value.substring(value.indexOf(value.match(/["*""+""\-""/"][^"."]/gi)[0])).includes(".")) {
+                //console.log("entrei")
+                if(!value.substring(value.indexOf(value.match(/["*""+""/"][^"."]/gi)[0])).includes(".")) {
                     //console.log(value.substring(value.indexOf(value.match(/["*""+""-""/"][^"."]/gi)[0])))
                     //console.log((value.match(/["*""+""-""/"][^"."]/gi)[0]))
                     document.getElementById("text_0").value += "."
@@ -101,7 +129,7 @@ function execButton(objValue) {
             //console.log(value)
             // console.log((value.match("*+-/")[0]))
         } catch  {
-            console.log("entrei2")
+            //console.log("entrei2")
             if (value.charAt(0) == '') {
                 document.getElementById("text_0").value += "0."
                 document.getElementById("text_store").value += "0."
@@ -122,6 +150,20 @@ function execButton(objValue) {
     }
     else if(document.getElementById("text_store").value.substring(size - 5) == "/ 100") {
         document.getElementById(text_0).value += "x"
+        return
+    }
+    else if(objValue == "+") {
+        if (!document.getElementById("text_store").value.includes("+")) {
+            document.getElementById("text_0").value += objValue;
+            document.getElementById("text_store").value += objValue;
+        }
+        return
+    }
+    else if(objValue == "-") {
+        if(!document.getElementById("text_store").value.includes("-")) {
+            document.getElementById("text_0").value += objValue;
+            document.getElementById("text_store").value += objValue;
+        }
         return
     }
     document.getElementById("text_0").value += objValue;
